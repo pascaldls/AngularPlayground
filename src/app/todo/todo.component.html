@@ -1,0 +1,30 @@
+<app-nav-bar></app-nav-bar>
+<br/>
+<h3>
+  Add tasks todo
+</h3>
+<br>
+<form>
+    <div class="form-group">
+      <input class="form-control" placeholder="Add todo" autofocus #todoText>
+     </div>
+    <button type="submit" class="btn btn-primary btn-block"
+      (click) = "addTodo( $event, todoText )" >ADD </button>
+</form>
+<br>
+<div>
+  <div class="alert alert-info" [hidden]="todos.length > 0 " > No todo </div>
+
+</div>
+<div class="row todo" *ngFor="let todo of todos" >
+    <div class="col-md-2">
+      <input type="checkbox"/>
+    </div>
+    <div class="col-md">
+      {{todo.task}}
+    </div>
+    <div class="col-md-2" btns >
+      <button class="btn btn-info "> Edit </button>
+      <button class="btn btn-danger"> Delete </button>
+    </div>
+</div>
